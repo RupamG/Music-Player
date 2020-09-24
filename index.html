@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="icon" type="image/png" href="https://www.flaticon.com/svg/static/icons/svg/3169/3169983.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="player">
+      <!-- Song -->
+      <div class="music__image--record">
+        <img src="" alt="music" class="music__image" />
+        <div class="record-effect"></div>
+      </div>
+      <h2 class="music__title"></h2>
+      <h3 class="music__artist"></h3>
+      <audio
+        src=""
+        preload="metadata"
+      ></audio>
+      <!-- Progress -->
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+        <div class="duration">
+          <span class="duration__now">0:00</span>
+          <span class="duration__total">2:06</span>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="player__controls">
+        <i class="fas fa-backward" id="btn--prev" title="previous"></i>
+        <i class="fas fa-play" id="btn--play" title="play"></i>
+        <i class="fas fa-forward" id="btn--next" title="next"></i>
+        <div class="volume-container">
+          <input class="volume-control" type="range" min="0" max="1" step="0.05" oninput="setVolume(this.value)" onchange="setVolume(this.value)"></input>
+          <i class="fas fa-volume-down" id="btn--volume" title="volume"></i>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

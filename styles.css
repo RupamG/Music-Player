@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541971860809-60ba8af72641?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Libre Caslon Display', serif;
+  font-size: 12px;
+}
+.player {
+  height: 400px;
+  width: 300px;
+  min-width: 400px;
+  margin-top: 100px;
+  background:rgb(229, 226, 226);
+  border-radius: 10px;
+  box-shadow: 0px 3px 15px 5px rgba(5, 5, 5, 0.6);
+  color:black;
+}
+.music__image--record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.music__image {
+  display: block;
+  margin-top: -120px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+  animation: rotate 30s linear infinite forwards;
+  animation-play-state: paused;
+}
+.music__image--rotate {
+  animation-play-state: running;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.record-effect {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-top: -120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 5%,
+    rgb(185, 185, 185) 5%,
+    rgb(139, 139, 139) 20%,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(255, 255, 255, 1) 75%
+  );
+  border-radius: 50%;
+}
+.music__title {
+  font-size: 25px;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.music__artist {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 400;
+  margin: 5px 0 0;
+}
+
+/* Progress */
+.progress-container {
+  background: rgb(73, 73, 73);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px 20px 30px;
+  height: 4px;
+  width: 90%;
+  font-family: sans-serif;
+}
+
+.progress {
+  background: #fff;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.duration {
+  position: relative;
+  top: -25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Volume */
+.volume-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30px;
+  right: 20px;
+  bottom: 5px;
+}
+.volume-container:hover .volume-control {
+  display: block;
+}
+.volume-control {
+  -webkit-appearance: none;
+  outline: none;
+  border: solid 1px rgb(199, 199, 199);
+  background-color: rgb(199, 199, 199);
+  transform: rotate(-90deg);
+  width: 100px;
+  margin-bottom: 50px;
+  display: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.volume-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 5px;
+  height: 15px;
+  background-color: rgb(2, 76, 172);
+  box-shadow: -100px 0px 0 100px rgb(2, 76, 172);
+  cursor: pointer;
+}
+
+/* Controls */
+.player__controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.fas {
+  font-size: 30px;
+  color: rgb(129, 129, 129);
+  margin: 0 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.fa-volume-down {
+  font-size: 20px;
+  margin: 0;
+}
+
+.fas:hover {
+  filter: brightness(80%);
+}
+
+.main-button {
+  font-size: 40px;
+  position: relative;
+  top: 3px;
+}
+
+/* Media Query: iPhone (Vertical) */
+@media screen and (max-width: 476px) {
+  
+  .music__title {
+    font-size: 20px;
+  }
+
+  .music__artist {
+    font-size: 15px;
+  }
+  .player{
+    min-width: 300px;
+  }
+}
